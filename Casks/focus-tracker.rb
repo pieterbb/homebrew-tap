@@ -1,6 +1,6 @@
 cask "focus-tracker" do
   version "1.0.0"
-  sha256 "182e72b72ffcc45fe3a0bf5b4d85d10cb6822f303209ba0e48ede5afd318652f"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
   url "https://github.com/pieterbb/focus-tracker/releases/download/#{version}/FocusTracker.app.zip"
   name "Focus Tracker"
