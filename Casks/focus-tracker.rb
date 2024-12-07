@@ -1,9 +1,11 @@
+require_relative "../lib/custom_download_strategy"
+
 cask "focus-tracker" do
   version "1.0.0"
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
-  url "https://raw.githubusercontent.com/pieterbb/focus-tracker/#{version}/releases/download/#{version}/FocusTracker.app.zip",
-      auth_header: "token ${HOMEBREW_GITHUB_API_TOKEN}"
+  url "https://github.com/pieterbb/focus-tracker/releases/download/#{version}/FocusTracker.app.zip",
+      using: GitHubPrivateRepositoryReleaseDownloadStrategy
   name "Focus Tracker"
   desc "Menu bar app to track and improve focus by monitoring context switching"
   homepage "https://github.com/pieterbb/focus-tracker"
