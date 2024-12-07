@@ -2,7 +2,7 @@ cask "focus-tracker" do
   version "1.0.0"
   sha256 "182e72b72ffcc45fe3a0bf5b4d85d10cb6822f303209ba0e48ede5afd318652f"
 
-  url "https://github.com/pieterbb/focus-tracker/releases/download/v#{version}/FocusTracker.app.zip"
+  url "https://github.com/pieterbb/focus-tracker/releases/download/#{version}/FocusTracker.app.zip"
   name "Focus Tracker"
   desc "Menu bar app to track and improve focus by monitoring context switching"
   homepage "https://github.com/pieterbb/focus-tracker"
