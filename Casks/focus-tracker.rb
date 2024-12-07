@@ -2,18 +2,8 @@ cask "focus-tracker" do
   version "1.0.0"
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
-  url do
-    require "json"
-    api_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    release_assets = JSON.parse(Utils.popen_read(
-      ["curl", "-H", "Authorization: token #{api_token}",
-              "https://api.github.com/repos/pieterbb/focus-tracker/releases/latest"]
-    ))
-    assets = release_assets["assets"]
-    asset = assets.find { |a| a["name"] == "FocusTracker.app.zip" }
-    asset["browser_download_url"]
-  end
-
+  url "https://raw.githubusercontent.com/pieterbb/focus-tracker/#{version}/releases/download/#{version}/FocusTracker.app.zip",
+      auth_header: "token ${HOMEBREW_GITHUB_API_TOKEN}"
   name "Focus Tracker"
   desc "Menu bar app to track and improve focus by monitoring context switching"
   homepage "https://github.com/pieterbb/focus-tracker"
